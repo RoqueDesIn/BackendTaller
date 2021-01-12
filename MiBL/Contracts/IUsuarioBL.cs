@@ -5,6 +5,7 @@ using System.Text;
 
 namespace MiBL.Contracts
 {
+
     public interface IUsuarioBL
     {
         bool Login(UsuarioDTO usuarioDTO);
