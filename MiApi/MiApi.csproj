@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="https://docs.gradle.com/enterprise/admin/schema/gradle-enterprise-config-schema-1.json" /></VisualStudio></ProjectExtensions>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MiBL\MiBL.csproj" />
+    <ProjectReference Include="..\MiCore\MiCore.csproj" />
+    <ProjectReference Include="..\MiDAL\MiDAL.csproj" />
+  </ItemGroup>
+
+
+</Project>
