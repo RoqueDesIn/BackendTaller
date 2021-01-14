@@ -40,6 +40,8 @@ namespace MiApi
             // aqui las inyecciones interfaz-clase
             services.AddScoped<IUsuarioBL, UsuarioBL>();
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+            services.AddScoped<IResumenTotal, ResumenTotal>();
+            services.AddScoped<IresumTotalRepo, ResumenTotalRepo>();
 
             //Para habilitar CORS en nuestra API
             services.AddCors(options =>
