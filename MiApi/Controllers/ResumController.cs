@@ -13,7 +13,18 @@ namespace MiApi.Controllers
     [ApiController]
     public class ResumController : ControllerBase
     {
+        public IResumenTotal _resumt { get; set; }
 
+        public ResumController(IResumenTotal resumt) {
+            _resumt = resumt;
+
+        }
+
+        [HttpGet]
+        public ActionResult<IEnumerable<ResumTotal>> Get()
+        {
+            return Ok(_resumt.Get());
+        }
 
 
     }

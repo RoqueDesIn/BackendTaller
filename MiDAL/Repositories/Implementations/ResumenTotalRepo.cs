@@ -18,9 +18,24 @@ namespace MiDAL.Repositories.Implementations
         }
         public IEnumerable<ResumTotal> Get()
         {
-            int cantidad = _context.Ventas.Count();
-            //int valor = _context.Ventas.Sum(Venta);
-            throw new NotImplementedException();
+
+            var ventas = _context.Ventas.ToList();
+            int total = 0;
+            int valor = 0;
+            foreach (var v in ventas)
+            {
+                total++;
+                valor = (int)(valor + v.Precio);
+            }
+
+
+            var result=new List<ResumTotal>();
+            ResumTotal r = new ResumTotal();
+            r.cant = total;
+            r.total = valor;
+            result.Add(r);
+            return result;
+            //throw new NotImplementedException();
         }
     }
 }
