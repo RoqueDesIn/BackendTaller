@@ -9,5 +9,6 @@ namespace MiBL.Contracts
    public interface IResumenTotal
     {
         IEnumerable<ResumTotal> Get();
+        IEnumerable<ResumUser> GetRU();
     }
 }

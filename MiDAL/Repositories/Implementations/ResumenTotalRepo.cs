@@ -16,25 +16,17 @@ namespace MiDAL.Repositories.Implementations
         {
             _context = context;
         }
-        public IEnumerable<ResumTotal> Get()
+        public IEnumerable<Usuarios> Getusers()
         {
+            var usuarios = _context.Usuarios.ToList();
+            return usuarios;
+            //throw new NotImplementedException();
+        }
 
+        public IEnumerable<Ventas> Getventas()
+        {
             var ventas = _context.Ventas.ToList();
-            int total = 0;
-            int valor = 0;
-            foreach (var v in ventas)
-            {
-                total++;
-                valor = (int)(valor + v.Precio);
-            }
-
-
-            var result=new List<ResumTotal>();
-            ResumTotal r = new ResumTotal();
-            r.cant = total;
-            r.total = valor;
-            result.Add(r);
-            return result;
+            return ventas;
             //throw new NotImplementedException();
         }
     }

@@ -27,5 +27,14 @@ namespace MiApi.Controllers
         }
 
 
+        [HttpGet]
+        [Route("UserResum")]
+        public ActionResult<IEnumerable<ResumUser>> GetUR() { 
+            return Ok(_resumt.GetRU());
+        }
+
+
+
+
     }
 }
