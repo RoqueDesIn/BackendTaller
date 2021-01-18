@@ -17,15 +17,15 @@ namespace MiDAL.Repositories.Implementations
         }
         public bool Login(UsuarioDTO usuarioDTO)
         {
-            return _context.Usuarios.Any(u => u.Nick == usuarioDTO.Nick && u.Passwd == usuarioDTO.Passwd);
+            return _context.Usuarios.Any(u => u.Nick == usuarioDTO.username && u.Passwd == usuarioDTO.password && usuarioDTO.username=="jefe");
         }
 
         public void Add(UsuarioDTO usuarioDTO)
         {
             var miUser = new Usuarios();
             //miUser.IdUser = usuarioDTO.IdUser;
-            miUser.Nick = usuarioDTO.Nick;
-            miUser.Passwd = usuarioDTO.Passwd;
+            miUser.Nick = usuarioDTO.username;
+            miUser.Passwd = usuarioDTO.password;
             miUser.Rango = usuarioDTO.Rango;
             miUser.Dni = usuarioDTO.Dni;
             miUser.FechaAlta = usuarioDTO.FechaAlta;
@@ -44,8 +44,8 @@ namespace MiDAL.Repositories.Implementations
             {
                 var usuario = new UsuarioDTO
                 {
-                    Nick = u.Nick,
-                    Passwd = u.Passwd,
+                    username = u.Nick,
+                    password = u.Passwd,
                     Dni = u.Dni,
                     Rango = u.Rango,
                     FechaAlta = u.FechaAlta,

@@ -7,8 +7,8 @@ namespace MiCore.DTO
     public class UsuarioDTO
     {
         public string Dni { get; set; }
-        public string Nick { get; set; }
-        public string Passwd { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
         public string Rango { get; set; }
         public DateTime? FechaAlta { get; set; }
         public string Foto { get; set; }
