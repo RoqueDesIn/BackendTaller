@@ -94,6 +94,34 @@ namespace MiBL.Implementations
             }
             return esta;
         }
+
+
+        IEnumerable<string> IResumenTotal.GetURGbl()
+        {
+            List<ResumUser> resum = (List<ResumUser>)GetRU();
+            string result = "{  'labels': [";
+            for (int i = 0; i < resum.Count; i++)
+            {
+                if (i < resum.Count - 1)
+                    result = result + resum[i].nombre + ",";
+                else
+                {
+                    result = result + resum[i].nombre + "],,";
+                }
+            }
+            result = result + "'data' { 'quantity': [";
+            for (int i = 0; i < resum.Count; i++)
+            {
+                if (i < resum.Count - 1)
+                    result = result + resum[i].cantidad + ",";
+                else
+                {
+                    result = result + resum[i].cantidad + "] }}";
+                }
+            }
+
+            yield return result;
+        }
     }
 
    

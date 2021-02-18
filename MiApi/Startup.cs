@@ -46,6 +46,7 @@ namespace MiApi
             //Para habilitar CORS en nuestra API
             services.AddCors(options =>
             {
+                // para poder llamar de localhost a localhost sin esto no funciona el backend en local
                 options.AddPolicy("CorsPolicy",
                     builder => builder.AllowAnyOrigin()
                     .AllowAnyMethod()

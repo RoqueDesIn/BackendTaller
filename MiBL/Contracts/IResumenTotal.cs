@@ -10,5 +10,6 @@ namespace MiBL.Contracts
     {
         IEnumerable<ResumTotal> Get();
         IEnumerable<ResumUser> GetRU();
+        IEnumerable <string> GetURGbl();
     }
 }

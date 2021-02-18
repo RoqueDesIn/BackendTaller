@@ -17,7 +17,7 @@ namespace MiDAL.Repositories.Implementations
         }
         public bool Login(UsuarioDTO usuarioDTO)
         {
-            return _context.Usuarios.Any(u => u.Nick == usuarioDTO.username && u.Passwd == usuarioDTO.password && usuarioDTO.username=="jefe");
+            return _context.Usuarios.Any(u => u.Nick == usuarioDTO.username && u.Passwd == usuarioDTO.password && usuarioDTO.username== usuarioDTO.password);
         }
 
         public void Add(UsuarioDTO usuarioDTO)
